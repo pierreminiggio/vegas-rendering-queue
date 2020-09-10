@@ -13,16 +13,26 @@ namespace RenderProject
     {
         public void FromVegas(Vegas myVegas)
         {
-            String inputFilePath = "F:\\videos\\vlogs\\15 - Live API 3\\projet.veg";
+            String inputFilePath = "F:\\videos\\vlogs\\test\\projet.veg";
             if (myVegas.OpenProject(inputFilePath))
             {
                 String rendererName = "Windows Media Video V11";
                 String templateName = "Vidéo HD 1080-30p 8 Mbits/s";
                 RenderArgs renderArgs = new RenderArgs(myVegas.Project);
                 renderArgs.RenderTemplate = findTemplate(rendererName, templateName, myVegas.Renderers);
-                String outputFilePath = "F:\\videos\\vlogs\\15 - Live API 3\\projet.veg";
+                String outputFilePath = "F:\\videos\\vlogs\\test\\projet.wmv";
                 renderArgs.OutputFile = outputFilePath;
                 RenderStatus renderStatus = myVegas.Render(renderArgs);
+                if (renderStatus == RenderStatus.Complete)
+                {
+                    // done
+                    myVegas.Exit();
+                } else
+                {
+                    // failed
+                    myVegas.Exit();
+                }
+                
             }
             else
             {
