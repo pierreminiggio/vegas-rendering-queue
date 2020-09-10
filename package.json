@@ -1,0 +1,22 @@
+{
+  "name": "vegas-rendering-queue",
+  "version": "1.0.0",
+  "description": "Start a rendering queue",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatoonTheCat/vegas-rendering-queue.git"
+  },
+  "author": "Pierre MINIGGIO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CatoonTheCat/vegas-rendering-queue/issues"
+  },
+  "homepage": "https://github.com/CatoonTheCat/vegas-rendering-queue#readme",
+  "dependencies": {
+    "node": "^12.6.0"
+  }
+}
