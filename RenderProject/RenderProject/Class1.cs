@@ -12,9 +12,15 @@ namespace RenderProject
     {
         public void FromVegas(Vegas myVegas)
         {
-            string filePath = "F:\\videos\\vlogs\\14 - Live API 2\\projet.veg";
-            myVegas.OpenProject(filePath);
-            MessageBox.Show(filePath);
+            string filePath = "F:\\videos\\vlogs\\15 - Live API 3\\projet.veg";
+            if (myVegas.OpenProject(filePath))
+            {
+                MessageBox.Show(filePath);
+            }
+            else
+            {
+                myVegas.Exit();
+            }
         }
     }
 }
