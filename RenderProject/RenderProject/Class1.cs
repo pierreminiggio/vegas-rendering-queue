@@ -13,7 +13,6 @@ namespace RenderProject
     {
         public void FromVegas(Vegas myVegas)
         {
-            RenderTemplate renderTemplate;
             String inputFilePath = "F:\\videos\\vlogs\\15 - Live API 3\\projet.veg";
             if (myVegas.OpenProject(inputFilePath))
             {
