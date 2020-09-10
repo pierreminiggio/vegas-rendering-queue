@@ -24,10 +24,13 @@ namespace RenderProject
                     {
                         foreach (RenderTemplate template in renderer.Templates)
                         {
-                            
+                            if (template.Name == "Vidéo HD 1080-30p 8 Mbits/s")
+                            {
+                                String templateName = template.Name;
+                                MessageBox.Show(templateName);
+                            }
                         }
                     }
-                    MessageBox.Show(rendererName);
                 }
                 /*
             RenderArgs renderArgs = new RenderArgs(myVegas.Project);
