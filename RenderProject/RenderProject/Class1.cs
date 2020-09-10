@@ -12,10 +12,17 @@ namespace RenderProject
     {
         public void FromVegas(Vegas myVegas)
         {
-            string filePath = "F:\\videos\\vlogs\\15 - Live API 3\\projet.veg";
-            if (myVegas.OpenProject(filePath))
+            string inputFilePath = "F:\\videos\\vlogs\\15 - Live API 3\\projet.veg";
+            if (myVegas.OpenProject(inputFilePath))
             {
-                MessageBox.Show(filePath);
+                RenderArgs renderArgs = new RenderArgs(myVegas.Project);
+                //RenderTemplate renderTemplate = new RenderTemplate();
+                //renderArgs.RenderTemplate = renderTemplate;
+                renderArgs.ShowOpenButtonsOnComplete = false;
+                renderArgs.SaveAsMono = false;
+                string outputFilePath = "F:\\videos\\vlogs\\15 - Live API 3\\projet.veg";
+                renderArgs.OutputFile = outputFilePath;
+                //RenderStatus renderStatus = myVegas.Render(renderArgs);
             }
             else
             {
