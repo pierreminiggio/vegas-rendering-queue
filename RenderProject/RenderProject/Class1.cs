@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,18 @@ namespace RenderProject
     {
         public void FromVegas(Vegas myVegas)
         {
-            String inputFilePath = "F:\\videos\\vlogs\\test\\projet.veg";
+
+            string configString  = File.ReadAllText("./tmp.csv");
+            string[] configArray = configString.Split(';');
+            string inputFilePath = configArray[0];
+            string rendererName = configArray[1];
+            string templateName = configArray[2];
+            string outputFilePath = configArray[3];
+
             if (myVegas.OpenProject(inputFilePath))
             {
-                String rendererName = "Windows Media Video V11";
-                String templateName = "Vidéo HD 1080-30p 8 Mbits/s";
                 RenderArgs renderArgs = new RenderArgs(myVegas.Project);
                 renderArgs.RenderTemplate = findTemplate(rendererName, templateName, myVegas.Renderers);
-                String outputFilePath = "F:\\videos\\vlogs\\test\\projet.wmv";
                 renderArgs.OutputFile = outputFilePath;
                 RenderStatus renderStatus = myVegas.Render(renderArgs);
                 if (renderStatus == RenderStatus.Complete)

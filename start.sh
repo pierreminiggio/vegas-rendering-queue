@@ -1,1 +1,1 @@
-"C:\Program Files\VEGAS\VEGAS Pro 17.0\vegas170.exe" -SCRIPT:"F:\dev\vegas-rendering-queue\RenderProject\RenderProject\Class1.cs"
+"C:\Program Files\VEGAS\VEGAS Pro 17.0\vegas170.exe" -SCRIPT:"F:\dev\vegas-rendering-queue\RenderProject\RenderProject\Class1.cs?test1=1&test2=2"
