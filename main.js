@@ -30,7 +30,10 @@ async function asyncForEach (array, callback) {
  * @param {string} vegasPath
  */
 async function renderVideos(videos, vegasPath) {
+    let i = 0;
     await asyncForEach(videos, async (video) => {
+        i++;
+        console.info('Video ' + i + '/' + videos.length)
         return await renderVideo(video, vegasPath)
     })
 }
@@ -40,6 +43,7 @@ async function renderVideos(videos, vegasPath) {
  * @param {string} vegasPath
  */
 async function renderVideo(video, vegasPath) {
+    console.info('Rendering ' + video.outputFilePath + '...')
     return await new Promise((resolve, reject) => {
         fs.writeFile(
             './tmp.csv',
@@ -52,6 +56,8 @@ async function renderVideo(video, vegasPath) {
                 const command = '"' + vegasPath + '" -SCRIPT:"' + __dirname + '\\RenderProject\\RenderProject\\Class1.cs"'
                 const startRender = exec(command)
                 startRender.addListener('exit', (code) => {
+                    console.info(video.outputFilePath + ' rendered !')
+                    console.info('')
                     resolve(code)
                 })
             }
@@ -59,8 +65,7 @@ async function renderVideo(video, vegasPath) {
     });
 }
 
-
-fs.readFile('./config.json', 'utf8', (err, configString) => {
+fs.readFile('./config.json', 'utf8', async (err, configString) => {
     if (err) {
         throw 'Config File Missing : ' + err
     }
@@ -68,5 +73,6 @@ fs.readFile('./config.json', 'utf8', (err, configString) => {
     /** @var {Config} */
     const config = JSON.parse(configString)
     
-    renderVideos(config.videos, config.vegasPath)
+    await renderVideos(config.videos, config.vegasPath)
+    process.exit(0)
 });
