@@ -30,13 +30,13 @@ namespace RenderProject
 
         public bool renderProject(
             Vegas myVegas,
-            string inputFilePath,
+            string projectFilePath,
             string rendererName,
             string templateName,
             string outputFilePath
         )
         {
-            if (myVegas.OpenProject(inputFilePath))
+            if (myVegas.OpenProject(projectFilePath))
             {
                 RenderArgs renderArgs = new RenderArgs(myVegas.Project);
                 renderArgs.RenderTemplate = findTemplate(rendererName, templateName, myVegas.Renderers);
