@@ -14,7 +14,6 @@ namespace RenderProject
     {
         public void FromVegas(Vegas myVegas)
         {
-
             string configString  = File.ReadAllText("./tmp.csv");
             string[] configArray = configString.Split(';');
             renderProject(myVegas, configArray[0], configArray[1], configArray[2], configArray[3]);
