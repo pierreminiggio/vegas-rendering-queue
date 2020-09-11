@@ -1,0 +1,17 @@
+{
+    "vegasPath": "C:\\Program Files\\VEGAS\\VEGAS Pro 17.0\\vegas170.exe",
+    "videos": [
+        {
+            "projectFilePath": "F:\\videos\\vlogs\\test\\projet.veg",
+            "rendererName": "Windows Media Video V11",
+            "templateName": "Vidéo HD 1080-30p 8 Mbits/s",
+            "outputFilePath": "F:\\videos\\vlogs\\test\\projet.wmv"
+        },
+        {
+            "projectFilePath": "F:\\videos\\vlogs\\test\\projet.veg",
+            "rendererName": "MAGIX AVC/AAC MP4",
+            "templateName": "Internet HD 1080p 50 fps",
+            "outputFilePath": "F:\\videos\\vlogs\\test\\projet.mp4"
+        }
+    ]
+}

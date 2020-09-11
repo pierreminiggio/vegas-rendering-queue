@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/CatoonTheCat/vegas-rendering-queue#readme",
   "dependencies": {
+    "fs": "0.0.1-security",
     "node": "^12.6.0"
   }
 }
