@@ -5,7 +5,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.Windows.Forms;
+//using System.Windows.Forms; -- Keep for debug via MessageBox.show(message)
 using ScriptPortal.Vegas;
 
 namespace RenderProject
@@ -17,11 +17,18 @@ namespace RenderProject
 
             string configString  = File.ReadAllText("./tmp.csv");
             string[] configArray = configString.Split(';');
-            string inputFilePath = configArray[0];
-            string rendererName = configArray[1];
-            string templateName = configArray[2];
-            string outputFilePath = configArray[3];
+            renderProject(myVegas, configArray[0], configArray[1], configArray[2], configArray[3]);
+            myVegas.Exit();
+        }
 
+        public bool renderProject(
+            Vegas myVegas,
+            string inputFilePath,
+            string rendererName,
+            string templateName,
+            string outputFilePath
+        )
+        {
             if (myVegas.OpenProject(inputFilePath))
             {
                 RenderArgs renderArgs = new RenderArgs(myVegas.Project);
@@ -30,19 +37,11 @@ namespace RenderProject
                 RenderStatus renderStatus = myVegas.Render(renderArgs);
                 if (renderStatus == RenderStatus.Complete)
                 {
-                    // done
-                    myVegas.Exit();
-                } else
-                {
-                    // failed
-                    myVegas.Exit();
+                    return true;
                 }
-                
             }
-            else
-            {
-                myVegas.Exit();
-            }
+
+            return false;
         }
 
         public RenderTemplate findTemplate(String rendererName, String templateName, Renderers renderers)
