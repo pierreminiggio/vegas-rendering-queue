@@ -49,7 +49,8 @@ async function renderVideo(video, vegasPath) {
                     reject(err)
                 }
 
-                const startRender = exec('bash start.sh')
+                const command = '"' + vegasPath + '" -SCRIPT:"' + __dirname + '\\RenderProject\\RenderProject\\Class1.cs"'
+                const startRender = exec(command)
                 startRender.addListener('exit', (code) => {
                     resolve(code)
                 })
