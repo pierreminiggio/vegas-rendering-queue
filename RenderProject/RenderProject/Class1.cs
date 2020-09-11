@@ -16,8 +16,16 @@ namespace RenderProject
         {
             string configString  = File.ReadAllText("./tmp.csv");
             string[] configArray = configString.Split(';');
-            renderProject(myVegas, configArray[0], configArray[1], configArray[2], configArray[3]);
-            myVegas.Exit();
+            if (renderProject(myVegas, configArray[0], configArray[1], configArray[2], configArray[3]))
+            {
+                // Success
+                myVegas.Exit();
+            }
+            else
+            {
+                // Failed
+                myVegas.Exit();
+            }
         }
 
         public bool renderProject(
