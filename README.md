@@ -1,5 +1,7 @@
 # vegas-rendering-queue
 
+Explanation video (french) : https://www.youtube.com/watch?v=yLP1XTT5Zho
+
 Requirements :
 - NodeJS
 - Sony Vegas Pro 14+
