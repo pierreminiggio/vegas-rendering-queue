@@ -2,6 +2,7 @@
 
 Requirements :
 - NodeJS
+- Sony Vegas Pro 14+
 - Windows (Not tested on Linux)
 
 ```
