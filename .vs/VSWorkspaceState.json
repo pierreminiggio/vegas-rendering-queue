@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\RenderProject",
+    "\\RenderProject\\RenderProject"
   ],
-  "SelectedNode": "\\start.sh",
+  "SelectedNode": "\\RenderProject",
   "PreviewInSolutionExplorer": false
 }
