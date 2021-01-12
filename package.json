@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/pierreminiggio/vegas-rendering-queue#readme",
   "dependencies": {
+    "@pierreminiggio/vegas-pro-17-script-portal-dll": "github:pierreminiggio/vegas-pro-17-script-portal-dll",
     "fs": "0.0.1-security",
     "node": "^12.6.0"
   }
